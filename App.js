@@ -12,6 +12,15 @@ import {
   View
 } from 'react-native';
 
+import {
+  HomePage,
+  MessagePage,
+  MinePage
+} from 'ts-react-native-pages';
+
+import { Router, Scene } from 'react-native-router-flux';
+
+
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
