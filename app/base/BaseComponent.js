@@ -6,8 +6,4 @@ export default class BaseComponent extends PureComponent {
     constructor(props) {
         super(props);
     }
-
-    navBarBuilder = () => {
-        return new NavBarBuilder(this, NAVIGATION_BAR_HEIGHT);
-    }
 }

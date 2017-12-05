@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {
     BaseComponent
 } from 'ts-react-native-base';

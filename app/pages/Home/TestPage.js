@@ -12,11 +12,11 @@ import {
 import Button from 'react-native-button';
 import { Actions } from 'react-native-router-flux';
 
-export default class MessagePage extends BaseComponent {
+export default class TestPage extends BaseComponent {
     render() {
         return (
             <View style={styles.container}>
-                <Button onPress={Actions.test}>测试页面</Button>
+                <Button onPress={Actions.pop}>返回</Button>
             </View>
         );
     }
@@ -27,6 +27,5 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#ff0'
     }
 });

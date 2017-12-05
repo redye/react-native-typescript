@@ -21,7 +21,7 @@ export const TAB_BAR_HEIGHT = 54;
 /**
  * 主题色
  */
-export const THEME_COLOR = 'orange';
+export const THEME_COLOR = '#FE8D1D';
 
 /**
  * 文字颜色
