@@ -22,8 +22,8 @@ const tabImages = {
 
 export default class TabIcon extends React.Component {
 
-    static defaultProps = {
-        focus: PropTypes.bool,
+    static PropTypes = {
+        focused: PropTypes.bool,
         title: PropTypes.string
     }
 
