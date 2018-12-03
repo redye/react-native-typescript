@@ -1,5 +1,19 @@
-import Configure from './Configure';
+import {
+    IS_PHONE_X,
+    NAVIGATION_BAR_HEIGHT,
+    TAB_BAR_HEIGHT,
+    THEME_COLOR,
+    TEXT_MAIN_COLOR,
+    SCREEN_WIDTH,
+    SCREEN_HEIGHT
+} from './Configure';
 
 export {
-    Configure
+    IS_PHONE_X,
+    NAVIGATION_BAR_HEIGHT,
+    TAB_BAR_HEIGHT,
+    THEME_COLOR,
+    TEXT_MAIN_COLOR,
+    SCREEN_WIDTH,
+    SCREEN_HEIGHT
 }

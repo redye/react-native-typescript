@@ -6,12 +6,12 @@ import Dimensions from 'Dimensions';
 /**
  * 是否是 iPhoneX
  */
-export const IS_PHONE_X = Platform.select({android: false, ios: Dimensions.get('window').height == 812 ? true : false});
+export const IS_PHONE_X = Platform.select({android: false, ios: Dimensions.get('window').height == 812 || Dimensions.get('window').height == 896 ? true : false});
 
 /**
  * 导航栏高度
  */
-export const NAVIGATION_BAR_HEIGHT = Platform.select({android: 54, ios:Dimensions.get('window').height == 812 ? 88 : 64});
+export const NAVIGATION_BAR_HEIGHT = Platform.select({android: 54, ios:IS_PHONE_X ? 88 : 64});
 
 /**
  * 底部导航高度

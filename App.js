@@ -17,6 +17,9 @@ import {
   MessagePage,
   MinePage,
   TestPage,
+  MessageDetailPage,
+  OrderDetailPage,
+  OrderListPage
 } from 'ts-react-native-pages';
 
 import {
@@ -36,7 +39,7 @@ import {
 } from 'react-native-router-flux';
 
 import backImage from './app/images/navigtionbar_back.png';
-import { THEME_COLOR, TEXT_MAIN_COLOR } from './app/common/Configure';
+import { THEME_COLOR, TEXT_MAIN_COLOR } from 'ts-react-native-common';
 
 getSceneStyle = () => ({
   backgroundColor: '#FFF',
@@ -87,7 +90,7 @@ export default class App extends Component<{}> {
               icon={TabIcon}
               initial
             >
-              <Scene key="home" component={HomePage} title="首页_scene" hideNavBar={false} />
+              <Scene key="home" path="" component={HomePage} title="首页_scene" hideNavBar={false} />
             </Stack>
 
             <Stack
@@ -111,6 +114,9 @@ export default class App extends Component<{}> {
             </Stack>
           </Tabs>
           <Scene key="test" component={TestPage} title="测试页面"/>
+          <Scene key="messageDetail" path="/message/detail/:messageId" component={MessageDetailPage} title="消息详情" />
+          <Scene key="orderList" path="/order/list" component={OrderListPage} title="订单列表" />
+          <Scene key="orderDetail" path="/order/list/:orderId" component={OrderDetailPage} title="订单详情" />
         </Stack>
       </Router>
     );

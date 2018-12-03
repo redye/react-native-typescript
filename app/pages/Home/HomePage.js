@@ -16,7 +16,8 @@ export default class HomePage extends BaseComponent {
     render() {
         return (
             <View style={styles.container}>
-                <Button onPress={Actions.test}>测试页面</Button>
+                <Button onPress={Actions['test']}>测试页面</Button>
+                <Button style={{marginTop: 20}} onPress={Actions['orderList']}>订单页面</Button>
             </View>
         );
     }

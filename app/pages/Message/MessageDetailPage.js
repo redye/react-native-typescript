@@ -6,7 +6,7 @@ import {
 
 import {
     View,
-    Linking,
+    Text,
     StyleSheet
 } from 'react-native';
 
@@ -17,8 +17,8 @@ export default class MessagePage extends BaseComponent {
     render() {
         return (
             <View style={styles.container}>
+                <Text style={{marginBottom: 20}}>{this.props.messageId}</Text>
                 <Button onPress={Actions['test']}>测试页面</Button>
-                <Button onPress={() => {Actions['messageDetail']({messageId: 1234})}} containerStyle={{marginTop: 20}}>消息详情</Button>
             </View>
         );
     }
