@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 import {
     View,
@@ -15,7 +15,7 @@ export default class OrderListPage extends React.Component {
         return (
             <View style={{flex: 1, justifyContent: "center", alignItems: 'center'}}>
                 <Text>订单列表</Text>
-                <Button style={{marginTop: 20}} onPress={Actions['orderDetail']}>一条记录</Button>
+                <Button style={{marginTop: 20}} onPress={() => Actions['orderDetail']({orderId: 1232})}>一条记录</Button>
             </View>
         );
     }

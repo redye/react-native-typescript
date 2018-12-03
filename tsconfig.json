@@ -59,7 +59,8 @@
     "jsx": "react",
     // "outDir": "dist",
     "sourceMap": false,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": [
     "typings/**/*.d.ts",
