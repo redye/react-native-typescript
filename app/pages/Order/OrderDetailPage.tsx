@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 import {
     View,
@@ -7,21 +7,21 @@ import {
 
 import PropTypes from 'prop-types';
 
-export default class OrderDetailPage extends React.Component {
+export default class OrderDetailPage extends React.Component<any> {
 
-    constructor(props) {
+    static propTypes = {
+        orderId: PropTypes.string | PropTypes.number
+    }
+
+    constructor(props: any) {
         super(props);
     }
 
     render () {
         return (
             <View style={{flex: 1, justifyContent: "center", alignItems: 'center'}}>
-                <Text>订单详情: {this.props.orderId}</Text>
+                <Text>订单详情: {this.props.orderId} {typeof this.props}</Text>
             </View>
         );
     }
-}
-
-OrderDetailPage.propTypes = {
-    orderId: PropTypes.string | PropTypes.number
 }

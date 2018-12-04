@@ -58,6 +58,7 @@
     "allowJs": true,
     "jsx": "react",
     // "outDir": "dist",
+    "baseUrl": "./",
     "sourceMap": false,
     "noImplicitAny": true,
     "allowSyntheticDefaultImports": true
