@@ -61,7 +61,8 @@
     "baseUrl": "./",
     "sourceMap": false,
     "noImplicitAny": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true
   },
   "include": [
     "typings/**/*.d.ts",

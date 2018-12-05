@@ -6,12 +6,18 @@ import {
 } from 'react-native';
 
 import PropTypes from 'prop-types';
+import { any } from 'prop-types';
 
-export default class OrderDetailPage extends React.Component<any> {
+interface OrderDetailProps {
+    orderId: string | number
+}
 
-    static propTypes = {
-        orderId: PropTypes.string | PropTypes.number
-    }
+
+export default class OrderDetailPage extends React.Component<OrderDetailProps, any> {
+
+    // static propTypes = {
+    //     orderId: PropTypes.string | PropTypes.number
+    // }
 
     constructor(props: any) {
         super(props);

@@ -6,7 +6,7 @@
 * [tsconfig.json 配置](#tsconfig)
 * [代码自动编译](#auto-compiler)
 * [在使用过程中遇到的问题](#questions)
-	* [在导入某个模块时报错](#question-import)
+	* [导入某个模块](#question-import)
 	* [构造函数](#question-constructor)
 	* [使用属性](#question-props)
 
@@ -66,7 +66,7 @@ npm i -D @types/react @types/react-native # 这两个依赖是将 react 和 reac
 
 ### <spqn id="questions">在使用过程中遇到的问题</span>
 
-#### <span id="question-import">在导入某个模块时报错</span>
+#### <span id="question-import">导入某个模块</span>
 
 🌰🌰🌰
 
@@ -140,6 +140,10 @@ constructor(props: any) {
 
 那么我们就给 props 一个类型：这里我们给一个 any 类型，props 更像一个 object 类型，但是 object 上并没有 orderId 这个属性，那么怎么办呢，我们可以给一个 any 类型。
 
+```js
+extends React.Component<any>
+```
+
 官方文档 [基础类型
 ](https://www.tslang.cn/docs/handbook/basic-types.html)
 
@@ -148,3 +152,21 @@ constructor(props: any) {
 > any类型是十分有用的，它允许你在编译时可选择地包含或移除类型检查。 你可能认为 Object有相似的作用，就像它在其它语言中那样。 但是 Object类型的变量只是允许你给它赋任意值 - 但是却不能够在它上面调用任意的方法，即便它真的有这些方法。
 
 > 当你只知道一部分数据的类型时，any类型也是有用的。
+
+
+#### React.Component
+
+extends React.Component 时接收两个参数: `extends React.Component<Props, State>`, 这里的 Props 和 State 都表示一种类型，我们可以定义这个类型
+
+[对象的类型——接口](https://github.com/xcatliu/typescript-tutorial/blob/master/basics/type-of-object-interfaces.md)
+
+```
+interface Props {
+	orderId: string | number
+}
+
+interface State {
+}
+
+extends React.Component<Props, State>
+```

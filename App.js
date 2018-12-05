@@ -19,7 +19,8 @@ import {
   TestPage,
   MessageDetailPage,
   OrderDetailPage,
-  OrderListPage
+  OrderListPage,
+  LoginController
 } from 'ts-react-native-pages';
 
 import {
@@ -37,6 +38,14 @@ import {
   Stack, 
   Reducer
 } from 'react-native-router-flux';
+
+import {
+  Provider,
+} from 'mobx-react';
+
+import {
+  userStore
+} from 'ts-react-native-store';
 
 import backImage from './app/images/navigtionbar_back.png';
 import { THEME_COLOR, TEXT_MAIN_COLOR } from 'ts-react-native-common';
@@ -58,67 +67,70 @@ createReducer = (params) => {
 export default class App extends Component<{}> {
   render() {
     return (
-      <Router 
-        getSceneStyle={getSceneStyle}
-        uriPrefix='weimob.com'
-        createReducer={createReducer}
-      >
-        <Stack 
-          navigationBarStyle={{ backgroundColor: THEME_COLOR }}
-          backButtonImage={backImage}
-          titleStyle={styles.titleStyle}
+      <Provider userStore={userStore}>
+        <Router 
+          getSceneStyle={getSceneStyle}
+          uriPrefix='weimob.com'
+          createReducer={createReducer}
         >
-          <Tabs
-            key='tabbar'
-            swipeEnabled={false}
-            showLabel={true}
-            tabBarStyle={styles.tabBarStyle}
-            activeBackgroundColor="rgba(236, 236, 236, 1)"
-            inactiveBackgroundColor="rgba(236, 236, 236, 1)"
-            activeTintColor={THEME_COLOR}
-            inactiveTintColor={TEXT_MAIN_COLOR}
-            labelStyle={styles.labelStyle}
-            hideNavBar
-            initial
+          <Stack 
+            navigationBarStyle={{ backgroundColor: THEME_COLOR }}
+            backButtonImage={backImage}
+            titleStyle={styles.titleStyle}
           >
-            <Stack
-              key="home_tab"
-              title="home"
-              tabBarLabel="首页"
-              inactiveBackgroundColor="#FFF"
-              activeBackgroundColor="#DDD"
-              icon={TabIcon}
+            <Tabs
+              key='tabbar'
+              swipeEnabled={false}
+              showLabel={true}
+              tabBarStyle={styles.tabBarStyle}
+              activeBackgroundColor="rgba(236, 236, 236, 1)"
+              inactiveBackgroundColor="rgba(236, 236, 236, 1)"
+              activeTintColor={THEME_COLOR}
+              inactiveTintColor={TEXT_MAIN_COLOR}
+              labelStyle={styles.labelStyle}
+              hideNavBar
               initial
             >
-              <Scene key="home" path="" component={HomePage} title="首页_scene" hideNavBar={false} />
-            </Stack>
+              <Stack
+                key="home_tab"
+                title="home"
+                tabBarLabel="首页"
+                inactiveBackgroundColor="#FFF"
+                activeBackgroundColor="#DDD"
+                icon={TabIcon}
+                initial
+              >
+                <Scene key="home" path="" component={HomePage} title="首页_scene" hideNavBar={false} />
+              </Stack>
 
-            <Stack
-              key="message_tab"
-              title="message"
-              tabBarLabel="消息"
-              icon={TabIcon}
-            >
-              <Scene key="message" component={MessagePage} title="消息_scene" hideNavBar={false} />
-            </Stack>
+              <Stack
+                key="message_tab"
+                title="message"
+                tabBarLabel="消息"
+                icon={TabIcon}
+              >
+                <Scene key="message" component={MessagePage} title="消息_scene" hideNavBar={false} />
+              </Stack>
 
-            <Stack
-              key="mine_tab"
-              title="mine"
-              tabBarLabel="我的"
-              inactiveBackgroundColor="#FFF"
-              activeBackgroundColor="#DDD"
-              icon={TabIcon}
-            >
-              <Scene key="mine" component={MinePage} hideNavBar title="我的_scene" />
-            </Stack>
-          </Tabs>
-          <Scene key="test" component={TestPage} title="测试页面"/>
-          <Scene key="messageDetail" path="/message/detail/:messageId" component={MessageDetailPage} title="消息详情" />
-          <Scene key="orderList" path="/order/list" component={OrderListPage} title="订单列表" />
-          <Scene key="orderDetail" path="/order/list/:orderId" component={OrderDetailPage} title="订单详情" />
-        </Stack>
-      </Router>
+              <Stack
+                key="mine_tab"
+                title="mine"
+                tabBarLabel="我的"
+                inactiveBackgroundColor="#FFF"
+                activeBackgroundColor="#DDD"
+                icon={TabIcon}
+              >
+                <Scene key="mine" component={MinePage} hideNavBar title="我的_scene" />
+              </Stack>
+            </Tabs>
+            <Scene key="test" component={TestPage} title="测试页面"/>
+            <Scene key="messageDetail" path="/message/detail/:messageId" component={MessageDetailPage} title="消息详情" />
+            <Scene key="orderList" path="/order/list" component={OrderListPage} title="订单列表" />
+            <Scene key="orderDetail" path="/order/list/:orderId" component={OrderDetailPage} title="订单详情" />
+            <Scene key="login" path="/login" component={LoginController} title="登录" />
+          </Stack>
+        </Router>
+      </Provider>
     );
   }
 }

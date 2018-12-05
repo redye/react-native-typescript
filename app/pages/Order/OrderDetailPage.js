@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { View, Text, } from 'react-native';
-import PropTypes from 'prop-types';
 export default class OrderDetailPage extends React.Component {
+    // static propTypes = {
+    //     orderId: PropTypes.string | PropTypes.number
+    // }
     constructor(props) {
         super(props);
     }
@@ -14,6 +16,3 @@ export default class OrderDetailPage extends React.Component {
                 typeof this.props)));
     }
 }
-OrderDetailPage.propTypes = {
-    orderId: PropTypes.string | PropTypes.number
-};

@@ -5,6 +5,7 @@ import TestPage from './Home/TestPage';
 import MessageDetailPage from './Message/MessageDetailPage';
 import OrderListPage from './Order/OrderListPage';
 import OrderDetailPage from './Order/OrderDetailPage';
+import LoginController from './Login/LoginController';
 
 export {
     HomePage,
@@ -13,5 +14,6 @@ export {
     TestPage,
     MessageDetailPage,
     OrderListPage,
-    OrderDetailPage
+    OrderDetailPage,
+    LoginController
 }
