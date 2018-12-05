@@ -13,3 +13,5 @@ declare module 'mobx-react';
 declare module 'ts-react-native-common';
 
 declare module 'ts-react-native-components';
+
+declare module 'ts-react-native-model';

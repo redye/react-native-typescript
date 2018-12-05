@@ -10,9 +10,13 @@ import { inject, observer } from 'mobx-react';
 import { observable, action, computed } from 'mobx';
 import { Actions } from 'react-native-router-flux';
 class LoginStore {
-    constructor() {
+    constructor(user) {
         this.phone = null;
         this.password = null;
+        if (user) {
+            this.phone = user.phone;
+            this.password = user.password;
+        }
     }
     setPhone(phone) {
         this.phone = phone;
@@ -43,7 +47,7 @@ import Button from 'react-native-button';
 let LoginController = class LoginController extends React.Component {
     constructor(props) {
         super(props);
-        this.loginStore = new LoginStore();
+        this.loginStore = new LoginStore(this.props.userStore.userInfo);
         this._onPhoneValueChange = (e) => {
             const text = e.nativeEvent.text;
             this.loginStore.setPhone(text);

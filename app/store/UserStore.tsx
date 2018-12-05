@@ -13,13 +13,6 @@ import {
 
 const userInfoKey = 'userInfo';
 
-interface User {
-    phone: string,
-    password: string,
-    headImg?: string,
-    name?: string
-}
-
 class UserStore {
     
     @observable user:User = null;

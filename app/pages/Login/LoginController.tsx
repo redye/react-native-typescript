@@ -28,6 +28,13 @@ class LoginStore {
     @observable phone: string = null;
     @observable password: string = null;
 
+    constructor(user: User) {
+        if (user) {
+            this.phone = user.phone;
+            this.password = user.password;
+        }
+    }  
+
     @action
     setPhone(phone: string) {
         this.phone = phone;
@@ -48,7 +55,7 @@ import Button from 'react-native-button';
 @inject('userStore')
 @observer
 export default class LoginController extends React.Component<any> {
-    loginStore: LoginStore = new LoginStore();
+    loginStore: LoginStore = new LoginStore(this.props.userStore.userInfo);
 
     constructor(props: any) {
         super(props);
