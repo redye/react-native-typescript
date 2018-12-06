@@ -6,7 +6,8 @@ import {
 
 import {
     View,
-    StyleSheet
+    StyleSheet,
+    Linking
 } from 'react-native';
 
 import Button from 'react-native-button';
@@ -18,6 +19,10 @@ export default class HomePage extends BaseComponent {
             <View style={styles.container}>
                 <Button onPress={Actions['test']}>测试页面</Button>
                 <Button style={{marginTop: 20}} onPress={Actions['orderList']}>订单页面</Button>
+
+                <Button style={{marginTop: 20}} onPress={() => {
+                    Linking.openURL('dkwapp://test');
+                }}>唤醒贷款王</Button>
             </View>
         );
     }

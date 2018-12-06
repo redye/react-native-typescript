@@ -64,13 +64,15 @@ createReducer = (params) => {
   };
 }
 
-export default class App extends Component<{}> {
+const prefix = 'tspritice://weimob.com';
+
+export default class App extends Component {
   render() {
     return (
       <Provider userStore={userStore}>
         <Router 
           getSceneStyle={getSceneStyle}
-          uriPrefix='weimob.com'
+          uriPrefix={prefix}
           createReducer={createReducer}
         >
           <Stack 
