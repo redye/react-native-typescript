@@ -37,15 +37,15 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   
-  UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-  [button setTitle:@"OpenURL" forState:UIControlStateNormal];
-  button.frame = CGRectMake(20, 100, 100, 40);
-  [button addTarget:self action:@selector(openURL) forControlEvents:UIControlEventTouchUpInside];
-  [rootViewController.view addSubview:button];
-  
-  self.urlLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 150, 200, 50)];
-  self.urlLabel.numberOfLines = 0;
-  [self.window.rootViewController.view addSubview:self.urlLabel];
+//  UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+//  [button setTitle:@"OpenURL" forState:UIControlStateNormal];
+//  button.frame = CGRectMake(20, 100, 100, 40);
+//  [button addTarget:self action:@selector(openURL) forControlEvents:UIControlEventTouchUpInside];
+//  [rootViewController.view addSubview:button];
+//
+//  self.urlLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 150, 200, 50)];
+//  self.urlLabel.numberOfLines = 0;
+//  [self.window.rootViewController.view addSubview:self.urlLabel];
   
   [self.window makeKeyAndVisible];
   return YES;

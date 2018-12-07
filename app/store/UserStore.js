@@ -20,8 +20,9 @@ class UserStore {
         return StorageUtil.save(userInfoKey, this.user);
     }
     clearUser() {
-        this.user = null;
-        StorageUtil.clear(userInfoKey);
+        StorageUtil.clear(userInfoKey).then((response) => {
+            this.user = null;
+        }).catch();
     }
     readUser() {
         // 从本地读取用户信息

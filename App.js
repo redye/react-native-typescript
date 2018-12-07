@@ -20,7 +20,8 @@ import {
   MessageDetailPage,
   OrderDetailPage,
   OrderListPage,
-  LoginController
+  LoginController,
+  WebController
 } from 'ts-react-native-pages';
 
 import {
@@ -64,7 +65,7 @@ createReducer = (params) => {
   };
 }
 
-const prefix = 'tspritice://weimob.com';
+const prefix = 'weimob.com';
 
 export default class App extends Component {
   render() {
@@ -130,6 +131,7 @@ export default class App extends Component {
             <Scene key="orderList" path="/order/list" component={OrderListPage} title="订单列表" />
             <Scene key="orderDetail" path="/order/list/:orderId" component={OrderDetailPage} title="订单详情" />
             <Scene key="login" path="/login" component={LoginController} title="登录" />
+            <Scene key="web" path="/web" component={WebController} title="Web" />
           </Stack>
         </Router>
       </Provider>

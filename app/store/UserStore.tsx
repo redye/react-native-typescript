@@ -31,8 +31,9 @@ class UserStore {
 
     @action
     clearUser() {
-        this.user = null;
-        StorageUtil.clear(userInfoKey);
+        StorageUtil.clear(userInfoKey).then((response: any) => {
+            this.user = null;
+        }).catch();
     }
 
     @action
@@ -52,13 +53,6 @@ class UserStore {
     @computed get isLogin() {
         return this.user && this.user !== undefined && this.user !== null;
     }
-
-    // get report() {
-    //     if (this.user === null) {
-    //         return `<None>`
-    //     }
-    //     return this.user;
-    // }
 }
 
 const userStore = new UserStore();

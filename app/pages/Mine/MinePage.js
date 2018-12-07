@@ -23,6 +23,11 @@ import {
 @inject('userStore')
 @observer
 export default class MinePage extends BaseComponent {
+
+    _clearUser = () => {
+        this.props.userStore.clearUser();
+    }
+
     render() {
         return (
             <View style={{backgroundColor: '#fff', flex: 1, alignItems: 'center', justifyContent: 'center'}}>
@@ -37,6 +42,8 @@ export default class MinePage extends BaseComponent {
                 }
 
                 <Button containerStyle={{marginTop: 40}} onPress={Actions['login']}>登录</Button>
+
+                <Button containerStyle={{marginTop: 40}} onPress={this._clearUser}>清除用户信息</Button>
             </View>
         );
     }

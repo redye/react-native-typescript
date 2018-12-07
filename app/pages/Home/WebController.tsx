@@ -13,7 +13,7 @@ export default class WebController extends React.Component {
                 source={{ html: `
                     <a href='http://www.baidu.com'>百度</a>
 
-                    <a href='tspratice://weimob.com/order/list/:242334'>测试</a>
+                    <a href='https://weimob.com/order/list/:242334'>测试</a>
                 ` }}
             />
         )
