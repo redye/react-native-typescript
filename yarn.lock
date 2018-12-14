@@ -4425,6 +4425,13 @@ react-native-tab-view@^1.0.0:
   dependencies:
     prop-types "^15.6.1"
 
+react-native-tableview@^2.4.1:
+  version "2.4.1"
+  resolved "http://registry.npm.taobao.org/react-native-tableview/download/react-native-tableview-2.4.1.tgz#3f6367fabb981cd4d60d26e73c974f4f7ae673b6"
+  integrity sha1-P2Nn+ruYHNTWDSbnPJdPT3rmc7Y=
+  dependencies:
+    prop-types "^15.6.2"
+
 react-native-typescript-transformer@^1.2.10:
   version "1.2.10"
   resolved "http://registry.npm.taobao.org/react-native-typescript-transformer/download/react-native-typescript-transformer-1.2.10.tgz#6f76c1449028cdeafa184b533301ecd547367ed1"

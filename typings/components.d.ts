@@ -10,6 +10,11 @@ declare module 'mobx';
 
 declare module 'mobx-react';
 
+declare module 'react-native-tableview';
+
+/**
+ * 私有库
+ */
 declare module 'ts-react-native-common';
 
 declare module 'ts-react-native-components';
